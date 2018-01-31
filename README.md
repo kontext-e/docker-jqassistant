@@ -49,10 +49,20 @@ There are the standard jQAssistant plugins plus the Kontext E plugin suite versi
 
 ## Examples
 
-	docker run -it -v /home/user/src/some_project:/project --env SCAN_DIRS="src doc/architecture" -p 7474:7474  jensnerche/jqassistant
+### Just list available scopes
 
 	docker run --env SCAN=0 --env ANALYZE=0 --env START_SERVER=0 --env AVAILABLE_SCOPES=1  jensnerche/jqassistant
 
-DukeCon Server from https://github.com/DirkMahler/dukecon_server.git commit 5556360:
+### Import only project's Git meta data
 
-	docker run -it -v /home/jn/src/dukecon_server:/project --env SCAN_DIRS="java:classpath::api/target/classes java:classpath::api/target/test-classes java:classpath::impl/target/classes java:classpath::impl/target/test-classes .git src/docs/asciidoc" -p 7474:7474 jensnerche/jqassistant
+	docker run -it -v /home/user/src/some_project:/project --env SCAN_DIRS=".git" -p 7474:7474  jensnerche/jqassistant
+
+### DukeCon Server from https://github.com/DirkMahler/dukecon_server.git commit 5556360:
+
+That like a typical multi-module Maven project. Scanned stuff:
+
+* compiled classes (you always need to add "java:classpath::" scope for classes)
+* Git meta data
+* Architecture documentation, containing Asciidoc description and PlantUML diagram
+
+	docker run -it -v /home/user/src/dukecon_server:/project --env SCAN_DIRS="java:classpath::api/target/classes java:classpath::api/target/test-classes java:classpath::impl/target/classes java:classpath::impl/target/test-classes .git src/docs/asciidoc" -p 7474:7474 jensnerche/jqassistant
