@@ -20,13 +20,14 @@ There are the standard jQAssistant plugins plus the Kontext E plugin suite versi
 
 ### DukeCon Server from https://github.com/DirkMahler/dukecon_server.git commit 5556360:
 
+	docker run -v /home/user/src/dukecon_server:/project jensnerche/jqassistant scan -f java:classpath::api/target/classes java:classpath::api/target/test-classes java:classpath::impl/target/classes java:classpath::impl/target/test-classes .git src/docs/asciidoc
+
 That like a typical multi-module Maven project. Scanned stuff:
 
 * compiled classes (you always need to add "java:classpath::" scope for classes)
 * Git meta data
 * Architecture documentation, containing Asciidoc description and PlantUML diagram
 
-	docker run -v /home/user/src/dukecon_server:/project jensnerche/jqassistant scan -f java:classpath::api/target/classes java:classpath::api/target/test-classes java:classpath::impl/target/classes java:classpath::impl/target/test-classes .git src/docs/asciidoc
 
 ### Run the server to explore the scanned data
 
