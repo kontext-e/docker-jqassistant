@@ -31,6 +31,6 @@ That like a typical multi-module Maven project. Scanned stuff:
 
 ### Run the server to explore the scanned data
 
-	docker run -it -v /home/user/src/dukecon_server:/project jensnerche/jqassistant -p 7474:7474 server  -serverAddress 0.0.0.0
+	docker run -it -v /home/user/src/dukecon_server:/project -p 7474:7474 jensnerche/jqassistant server -serverAddress 0.0.0.0
 
 Note that unlike in the jQAssistant commandline distribution you have to make the server bind to all addresses, otherwise the port forwarding would not work.
