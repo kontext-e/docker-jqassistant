@@ -1,12 +1,19 @@
-This is jQAssistant 1.3.0 Distribution with Kontext E Plugin Suite 1.3.3 in a Docker image.
+This is jQAssistant Distribution with Kontext E Plugin Suite in a Docker image.
 
-In general it works like the [jQAssistant command line distribution](http://buschmais.github.io/jqassistant/doc/1.3.0/#_command_line).
+In general it works like the [jQAssistant command line distribution](http://buschmais.github.io/jqassistant/doc/1.6.0/#_command_line).
+
+## Tags
+
+* 1.3.3
+* 1.4.2
+* 1.5.1
+* 1.6.1
 
 ## Volume
 There is one VOLUME ["/project"]
 
 ## Installed Plugins
-There are the standard jQAssistant plugins plus the Kontext E plugin suite version 1.3.3 (containing asciidoc, checkstyle, findbugs, git, jacoco, javaparser, linecount, plaintext, plantuml, pmd) available.
+There are the standard jQAssistant plugins plus the Kontext E plugin suite (containing asciidoc, checkstyle, findbugs, git, jacoco, javaparser, linecount, plaintext, plantuml, pmd) available.
 
 ## Examples
 
