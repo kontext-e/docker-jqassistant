@@ -8,12 +8,14 @@ In general it works like the [jQAssistant command line distribution](http://busc
 * 1.4.2
 * 1.5.1
 * 1.6.1
+* 1.7.0
 
 ## Volume
 There is one VOLUME ["/project"]
 
 ## Installed Plugins
-There are the standard jQAssistant plugins plus the Kontext E plugin suite (containing asciidoc, checkstyle, findbugs, git, jacoco, javaparser, linecount, plaintext, plantuml, pmd) available.
+There are the standard jQAssistant plugins plus the Kontext E plugin suite (containing asciidoc, checkstyle, excel, spotbugs, git, jacoco, javaparser, linecount, plaintext, plantuml, pmd) available.
+Starting with jQAssistant 1.7.0 also the Dashboard is available.
 
 ## Examples
 
@@ -39,5 +41,10 @@ That like a typical multi-module Maven project. Scanned stuff:
 ### Run the server to explore the scanned data
 
 	docker run -it -v /home/user/src/dukecon_server:/project -p 7474:7474 jensnerche/jqassistant server -serverAddress 0.0.0.0
+
+Starting with jQAssistant 1.7.0 you need to run
+
+	docker run -it -v /home/user/src/dukecon_server:/project -p 7474:7474 -p 7687:7687 jensnerche/jqassistant server -embeddedListenAddress 0.0.0.0
+  
 
 Note that unlike in the jQAssistant commandline distribution you have to make the server bind to all addresses, otherwise the port forwarding would not work.
