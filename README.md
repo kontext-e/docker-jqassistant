@@ -1,6 +1,6 @@
 This is jQAssistant Distribution with Kontext E Plugin Suite in a Docker image.
 
-In general it works like the [jQAssistant command line distribution](http://buschmais.github.io/jqassistant/doc/1.6.0/#_command_line).
+In general it works like the [jQAssistant command line distribution](http://jqassistant.github.io/jqassistant/doc/1.7.0/#_command_line).
 
 ## Tags
 
